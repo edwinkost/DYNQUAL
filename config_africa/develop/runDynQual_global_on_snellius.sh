@@ -6,6 +6,9 @@
 # we use all cores
 #SBATCH -n 32
 
+# wall clock time (maximum 120 hours)
+#SBATCH -t 119:59:00
+
 # activate the following if we want to reserve the entire node (which is the case if -n 96)
 #SBATCH --exclusive
 
