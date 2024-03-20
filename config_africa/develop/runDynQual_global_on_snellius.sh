@@ -16,15 +16,14 @@
 #SBATCH -J dynqual
 
 
-# please set where you stored DYNQUAL scripts
-SCRIPT_FOLDER=$HOME/github/Graha010/DYNQUAL/DynQualModel/
+# please set where you stored DYNQUAL scripts - DON'T FORGET TO CHANGE THIS
+SCRIPT_FOLDER=/home/edwin/github/edwinkost/DYNQUAL/DynQualModel/
 
-# please 
-INI_FILE=$HOME/DYNQUAL/ini/global_run/DynQual_05min_global_gcm.ini
-# - Note that I noticed that Edward still use quite old parameter files from PCR-GLOBWB. Shall we update this? If yes, I'll allocate some hours around next week. 
+# the configuration file
+INI_FILE=/home/edwin/github/edwinkost/DYNQUAL/config_africa/develop/dynqual_05min_offline_develop_parallel.ini
 
 # we activate the correct conda environment on eejit and many other settings
-. /home/edwindql/load_all_default.sh
+. /home/edwin/load_all_default.sh
 
 
 # we go to the folder where the folder script
