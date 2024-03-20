@@ -31,8 +31,21 @@ INI_FILE=$HOME/DYNQUAL/ini/global_run/DynQual_05min_global_gcm.ini
 cd ${SCRIPT_FOLDER}
 
 
+MAIN_OUTPUT_FOLDER="/scratch-shared/edwin/dynqual_test/"
+
+
 # do some runs with parallelization
-python deterministic_runner_offline.py ../config_africa/develop/dynqual_05min_offline_develop.ini &
+
+python deterministic_runner_offline_vbonato.py ../config_africa/develop/dynqual_05min_offline_develop_parallel.ini -mod ${MAIN_OUTPUT_FOLDER}/M06 -clone M06  &
+python deterministic_runner_offline_vbonato.py ../config_africa/develop/dynqual_05min_offline_develop_parallel.ini -mod ${MAIN_OUTPUT_FOLDER}/M03 -clone M03  &
+python deterministic_runner_offline_vbonato.py ../config_africa/develop/dynqual_05min_offline_develop_parallel.ini -mod ${MAIN_OUTPUT_FOLDER}/M07 -clone M07  &
+python deterministic_runner_offline_vbonato.py ../config_africa/develop/dynqual_05min_offline_develop_parallel.ini -mod ${MAIN_OUTPUT_FOLDER}/M08 -clone M08  &
+python deterministic_runner_offline_vbonato.py ../config_africa/develop/dynqual_05min_offline_develop_parallel.ini -mod ${MAIN_OUTPUT_FOLDER}/M01 -clone M01  &
+python deterministic_runner_offline_vbonato.py ../config_africa/develop/dynqual_05min_offline_develop_parallel.ini -mod ${MAIN_OUTPUT_FOLDER}/M09 -clone M09  &
+python deterministic_runner_offline_vbonato.py ../config_africa/develop/dynqual_05min_offline_develop_parallel.ini -mod ${MAIN_OUTPUT_FOLDER}/M05 -clone M05  &
+python deterministic_runner_offline_vbonato.py ../config_africa/develop/dynqual_05min_offline_develop_parallel.ini -mod ${MAIN_OUTPUT_FOLDER}/M02 -clone M02  &
+
+
 wait
 
 
