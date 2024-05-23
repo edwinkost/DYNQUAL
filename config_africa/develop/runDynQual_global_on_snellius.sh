@@ -35,13 +35,13 @@ MAIN_OUTPUT_FOLDER="/scratch-shared/edwindql/dynqual_test/gswp3-w5e5/historical-
 
 # do some runs with parallelization
 python deterministic_runner_offline_vbonato.py ${INI_FILE} -mod ${MAIN_OUTPUT_FOLDER}/M06 -clone M06 -startTime 1980-01-01 -endTime 2014-12-31  &
-python deterministic_runner_offline_vbonato.py ${INI_FILE} -mod ${MAIN_OUTPUT_FOLDER}/M03 -clone M03 -startTime 1980-01-01 -endTime 2014-12-31  &
-python deterministic_runner_offline_vbonato.py ${INI_FILE} -mod ${MAIN_OUTPUT_FOLDER}/M07 -clone M07 -startTime 1980-01-01 -endTime 2014-12-31  &
-python deterministic_runner_offline_vbonato.py ${INI_FILE} -mod ${MAIN_OUTPUT_FOLDER}/M08 -clone M08 -startTime 1980-01-01 -endTime 2014-12-31  &
-python deterministic_runner_offline_vbonato.py ${INI_FILE} -mod ${MAIN_OUTPUT_FOLDER}/M01 -clone M01 -startTime 1980-01-01 -endTime 2014-12-31  &
-python deterministic_runner_offline_vbonato.py ${INI_FILE} -mod ${MAIN_OUTPUT_FOLDER}/M09 -clone M09 -startTime 1980-01-01 -endTime 2014-12-31  &
-python deterministic_runner_offline_vbonato.py ${INI_FILE} -mod ${MAIN_OUTPUT_FOLDER}/M05 -clone M05 -startTime 1980-01-01 -endTime 2014-12-31  &
-python deterministic_runner_offline_vbonato.py ${INI_FILE} -mod ${MAIN_OUTPUT_FOLDER}/M02 -clone M02 -startTime 1980-01-01 -endTime 2014-12-31  &
+#~ python deterministic_runner_offline_vbonato.py ${INI_FILE} -mod ${MAIN_OUTPUT_FOLDER}/M03 -clone M03 -startTime 1980-01-01 -endTime 2014-12-31  &
+#~ python deterministic_runner_offline_vbonato.py ${INI_FILE} -mod ${MAIN_OUTPUT_FOLDER}/M07 -clone M07 -startTime 1980-01-01 -endTime 2014-12-31  &
+#~ python deterministic_runner_offline_vbonato.py ${INI_FILE} -mod ${MAIN_OUTPUT_FOLDER}/M08 -clone M08 -startTime 1980-01-01 -endTime 2014-12-31  &
+#~ python deterministic_runner_offline_vbonato.py ${INI_FILE} -mod ${MAIN_OUTPUT_FOLDER}/M01 -clone M01 -startTime 1980-01-01 -endTime 2014-12-31  &
+#~ python deterministic_runner_offline_vbonato.py ${INI_FILE} -mod ${MAIN_OUTPUT_FOLDER}/M09 -clone M09 -startTime 1980-01-01 -endTime 2014-12-31  &
+#~ python deterministic_runner_offline_vbonato.py ${INI_FILE} -mod ${MAIN_OUTPUT_FOLDER}/M05 -clone M05 -startTime 1980-01-01 -endTime 2014-12-31  &
+#~ python deterministic_runner_offline_vbonato.py ${INI_FILE} -mod ${MAIN_OUTPUT_FOLDER}/M02 -clone M02 -startTime 1980-01-01 -endTime 2014-12-31  &
 
 
 wait
