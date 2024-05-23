@@ -9,9 +9,6 @@
 # wall clock time (maximum 120 hours)
 #SBATCH -t 119:59:00
 
-# activate the following if we want to reserve the entire node (which is the case if -n 96)
-#SBATCH --exclusive
-
 # the partition name 
 #SBATCH -p genoa
 
@@ -20,10 +17,10 @@
 
 
 # please set where you stored DYNQUAL scripts - DON'T FORGET TO CHANGE THIS
-SCRIPT_FOLDER=/home/edwinaha/github/edwinkost/DYNQUAL/DynQualModel/
+SCRIPT_FOLDER=/home/edwindql/github/edwinkost/DYNQUAL/DynQualModel/
 
 # the configuration file
-INI_FILE=/home/edwinaha/github/edwinkost/DYNQUAL/config_africa/develop/dynqual_05min_offline_develop_parallel.ini
+INI_FILE=/home/edwindql/github/edwinkost/DYNQUAL/config_africa/develop/dynqual_05min_offline_develop_parallel.ini
 
 # we activate the correct conda environment on eejit and many other settings
 . /home/edwin/load_all_default.sh
@@ -33,7 +30,7 @@ INI_FILE=/home/edwinaha/github/edwinkost/DYNQUAL/config_africa/develop/dynqual_0
 cd ${SCRIPT_FOLDER}
 
 
-MAIN_OUTPUT_FOLDER="/scratch-shared/edwinaha/dynqual_test/gswp3-w5e5/historical-reference/"
+MAIN_OUTPUT_FOLDER="/scratch-shared/edwindql/dynqual_test/gswp3-w5e5/historical-reference/"
 
 
 # do some runs with parallelization
