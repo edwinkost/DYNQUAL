@@ -124,9 +124,9 @@ class WaterBodies(object):
         else:
             if "usingSingleYearWaterBodiesFile" in self.iniItems.routingOptions.keys() and self.iniItems.routingOptions["usingSingleYearWaterBodiesFile"] == "True":
 
-                self.waterBodyShapeFactor = vos.readPCRmapClone(\
+                self.waterBodyShapeFactor = pcr.scalar(vos.readPCRmapClone(\
                  self.waterBodyShF,\
-                 self.cloneMap,self.tmpDir,self.inputDir,False,None,True)
+                 self.cloneMap,self.tmpDir,self.inputDir,False,None,True))
 
             else:
                 self.waterBodyShapeFactor = vos.readPCRmapClone(\
