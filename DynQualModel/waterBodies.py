@@ -122,9 +122,16 @@ class WaterBodies(object):
                                 #date_used, useDoy = 'yearly',\
                                 #cloneMapFileName = self.cloneMap)
         else:
-            self.waterBodyShapeFactor = vos.readPCRmapClone(\
-                self.waterBodyShF+str(year_used)+".map",\
-                self.cloneMap,self.tmpDir,self.inputDir,False,None,True)
+            if "usingSingleYearWaterBodiesFile" in self.iniItems.routingOptions.keys() and self.iniItems.routingOptions["usingSingleYearWaterBodiesFile"] == "True":
+
+                self.waterBodyShapeFactor = vos.readPCRmapClone(\
+                 self.waterBodyShF,\
+                 self.cloneMap,self.tmpDir,self.inputDir,False,None,True)
+
+            else:
+                self.waterBodyShapeFactor = vos.readPCRmapClone(\
+                 self.waterBodyShF+str(year_used)+".map",\
+                 self.cloneMap,self.tmpDir,self.inputDir,False,None,True)
              
         
         # water body ids
@@ -133,9 +140,18 @@ class WaterBodies(object):
                                 date_used, useDoy = 'yearly',\
                                 cloneMapFileName = self.cloneMap)
         else:
-            self.waterBodyIds = vos.readPCRmapClone(\
-                self.waterBodyIdsInp+str(year_used)+".map",\
-                self.cloneMap,self.tmpDir,self.inputDir,False,None,True)
+
+            if "usingSingleYearWaterBodiesFile" in self.iniItems.routingOptions.keys() and self.iniItems.routingOptions["usingSingleYearWaterBodiesFile"] == "True":
+
+                self.waterBodyIds = vos.readPCRmapClone(\
+                 self.waterBodyIdsInp,\
+                 self.cloneMap,self.tmpDir,self.inputDir,False,None,True)
+
+            else:
+
+                self.waterBodyIds = vos.readPCRmapClone(\
+                 self.waterBodyIdsInp+str(year_used)+".map",\
+                 self.cloneMap,self.tmpDir,self.inputDir,False,None,True)
         #
         self.waterBodyIds = pcr.ifthen(\
                             pcr.scalar(self.waterBodyIds) > 0.,\
@@ -185,10 +201,21 @@ class WaterBodies(object):
                         vos.netcdf2PCRobjClone(self.ncFileInp,'resSfAreaInp', \
                         date_used, useDoy = 'yearly',\
                         cloneMapFileName = self.cloneMap)
+
         else:
-            resSfArea = 1000. * 1000. * vos.readPCRmapClone(
+
+            if "usingSingleYearWaterBodiesFile" in self.iniItems.routingOptions.keys() and self.iniItems.routingOptions["usingSingleYearWaterBodiesFile"] == "True":
+            
+                resSfArea = 1000. * 1000. * vos.readPCRmapClone(
+                   self.resSfAreaInp,\
+                   self.cloneMap,self.tmpDir,self.inputDir)
+
+            else:
+
+                resSfArea = 1000. * 1000. * vos.readPCRmapClone(
                    self.resSfAreaInp+str(year_used)+".map",\
                    self.cloneMap,self.tmpDir,self.inputDir)
+
         resSfArea = pcr.areaaverage(resSfArea,self.waterBodyIds)                        
         resSfArea = pcr.cover(resSfArea,0.)                        
 
@@ -218,9 +245,19 @@ class WaterBodies(object):
                                 date_used, useDoy = 'yearly',\
                                 cloneMapFileName = self.cloneMap),pcr.scalar(0.0))
         else:
-            self.waterBodyTyp = vos.readPCRmapClone(
-                self.waterBodyTypInp+str(year_used)+".map",\
-                self.cloneMap,self.tmpDir,self.inputDir,False,None,True)
+
+            if "usingSingleYearWaterBodiesFile" in self.iniItems.routingOptions.keys() and self.iniItems.routingOptions["usingSingleYearWaterBodiesFile"] == "True":
+            
+                self.waterBodyTyp = vos.readPCRmapClone(
+                 self.waterBodyTypInp,\
+                 self.cloneMap,self.tmpDir,self.inputDir,False,None,True)
+
+            else:
+
+                self.waterBodyTyp = vos.readPCRmapClone(
+                 self.waterBodyTypInp+str(year_used)+".map",\
+                 self.cloneMap,self.tmpDir,self.inputDir,False,None,True)
+
         # excluding wetlands (waterBodyTyp = 0) in all functions related to lakes/reservoirs 
         #
         self.waterBodyTyp = pcr.ifthen(\
@@ -252,9 +289,18 @@ class WaterBodies(object):
                              date_used, useDoy = 'yearly',\
                              cloneMapFileName = self.cloneMap)
         else:
-            self.resMaxCap = 1000. * 1000. * vos.readPCRmapClone(\
-                self.resMaxCapInp+str(year_used)+".map", \
-                self.cloneMap,self.tmpDir,self.inputDir)
+
+            if "usingSingleYearWaterBodiesFile" in self.iniItems.routingOptions.keys() and self.iniItems.routingOptions["usingSingleYearWaterBodiesFile"] == "True":
+
+                self.resMaxCap = 1000. * 1000. * vos.readPCRmapClone(\
+                 self.resMaxCapInp, \
+                 self.cloneMap,self.tmpDir,self.inputDir)
+
+            else:
+
+                self.resMaxCap = 1000. * 1000. * vos.readPCRmapClone(\
+                 self.resMaxCapInp+str(year_used)+".map", \
+                 self.cloneMap,self.tmpDir,self.inputDir)
 
         self.resMaxCap = pcr.ifthen(self.resMaxCap > 0,\
                                     self.resMaxCap)
