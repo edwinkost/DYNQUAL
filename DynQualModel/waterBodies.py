@@ -63,6 +63,9 @@ class WaterBodies(object):
         #                        at which reservoir release is equal to long-term average outflow
         self.minResvrFrac = 0.10
         self.maxResvrFrac = 0.75
+        
+        # make iniItems available for other modules
+        self.iniItems = iniItems
 
     def getParameterFiles(self,currTimeStep,cellArea,ldd,\
                                cellLengthFD,cellSizeInArcDeg,\
@@ -94,7 +97,13 @@ class WaterBodies(object):
                            date_used, useDoy = 'yearly',\
                            cloneMapFileName = self.cloneMap)
         else:
-            self.fracWat = vos.readPCRmapClone(\
+            
+            if "usingSingleYearWaterBodiesFile" in self.iniItems.routingOptions.keys() and self.iniItems.routingOptions["usingSingleYearWaterBodiesFile"] == "True":
+                self.fracWat = vos.readPCRmapClone(\
+                           self.fracWaterInp + ".map",
+                           self.cloneMap,self.tmpDir,self.inputDir)
+            else:
+                self.fracWat = vos.readPCRmapClone(\
                            self.fracWaterInp+str(year_used)+".map",
                            self.cloneMap,self.tmpDir,self.inputDir)
         
