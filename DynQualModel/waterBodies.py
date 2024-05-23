@@ -100,7 +100,7 @@ class WaterBodies(object):
             
             if "usingSingleYearWaterBodiesFile" in self.iniItems.routingOptions.keys() and self.iniItems.routingOptions["usingSingleYearWaterBodiesFile"] == "True":
                 self.fracWat = vos.readPCRmapClone(\
-                           self.fracWaterInp + ".map",
+                           self.fracWaterInp,
                            self.cloneMap,self.tmpDir,self.inputDir)
             else:
                 self.fracWat = vos.readPCRmapClone(\
