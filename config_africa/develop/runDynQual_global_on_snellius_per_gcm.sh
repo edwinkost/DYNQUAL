@@ -63,7 +63,9 @@ declare -a arr=("M01" "M02" "M03" "M05" "M06" "M07" "M08" "M09")
 for i in "${arr[@]}"
 do
    echo "$i"
-
+   
+   CLONE_CODE=$i
+   
    python deterministic_runner_offline_vbonato.py ${INI_FILE} \
    -mod                      ${OUTPUT_FOLDER}/${CLONE_CODE}/ \
    -clone_code               ${CLONE_CODE} \
