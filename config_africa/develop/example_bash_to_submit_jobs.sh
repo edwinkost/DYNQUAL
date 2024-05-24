@@ -1,6 +1,8 @@
 
 
-# test for ukesm1-0-ll_historical_dailyTot_output_1960-2014.nc
+# test for ukesm1-0-ll_historical
+
+JOB_NAME="UKEX1980"
 
 OUTPUT_FOLDER="/scratch-shared/edwindql/test_dynqual_final/ukesm1-0-ll/historical/1980-1984/"
 
@@ -34,7 +36,6 @@ RESMAXCAP_FILE="/projects/0/dfguu/users/edwin/data/valentina_aha_reservoirs/v202
 RESSFAREA_FILE="/projects/0/dfguu/users/edwin/data/valentina_aha_reservoirs/v2024-05-20/existing/merged_resSfAreaInp_existing.map"
 
 
-sbatch -J \
+sbatch -J ${JOB_NAME} \
 --export OUTPUT_FOLDER=${OUTPUT_FOLDER},START_TIME=${START_TIME},END_TIME=${END_TIME},PRE_FILE=${PRE_FILE},TMP_FILE=${TMP_FILE},ET0_FILE=${ET0_FILE},RAD_FILE=${RAD_FILE},TMP_ANNUAL_AVG_FILE=${TMP_ANNUAL_AVG_FILE},BASEFLOW_FILE=${BASEFLOW_FILE},INTERFLOW_FILE=${INTERFLOW_FILE},DIRECT_RUNOFF_FILE=${DIRECT_RUNOFF_FILE},FRACWATER_FILE=${FRACWATER_FILE},WATERBODY_ID_FILE=${WATERBODY_ID_FILE},WATERBODY_TYPE_FILE=${WATERBODY_TYPE_FILE},RESMAXCAP_FILE=${RESMAXCAP_FILE},RESSFAREA_FILE=${RESSFAREA_FILE},NUM_OF_SPINUP_YRS=${NUM_OF_SPINUP_YRS},INITIAL_CONDITION_FOLDER=${INITIAL_CONDITION_FOLDER},DATE_FOR_INITIAL_STATES=${DATE_FOR_INITIAL_STATES} \
 runDynQual_global_on_snellius_per_gcm.sh
-
