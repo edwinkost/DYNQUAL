@@ -66,7 +66,7 @@ do
 
    python deterministic_runner_offline_vbonato.py ${INI_FILE} \
    -mod                      ${OUTPUT_FOLDER}/${CLONE_CODE}/ \
-   -clone_code               ${CLONE_CODE} \  
+   -clone_code               ${CLONE_CODE} \
    -start_time               ${START_TIME} \
    -end_time                 ${END_TIME} \
    -pre_file                 ${PRE_FILE} \
