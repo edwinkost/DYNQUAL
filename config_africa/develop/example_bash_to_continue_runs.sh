@@ -4,7 +4,7 @@
 
 JOB_NAME="UKEX1985"
 
-OUTPUT_FOLDER="/scratch-shared/edwindql/test_dynqual_final/ukesm1-0-ll/historical/1980-1984/"
+OUTPUT_FOLDER="/scratch-shared/edwindql/test_dynqual_final/ukesm1-0-ll/historical/1985-1989/"
 
 START_TIME="1985-01-01"
 END_TIME="1989-12-31"
