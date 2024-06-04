@@ -541,7 +541,8 @@ ncores = min(len(netcdfList), max_number_of_cores)
 # ~ areas = ['M%07d'%i for i in range(1, number_of_clones + 1, 1)]
 
 # clone areas
-areas = 
+areas = str(sys.argv[10]).split(",")
+print(areas)
 
 
 # extent of the clone map
