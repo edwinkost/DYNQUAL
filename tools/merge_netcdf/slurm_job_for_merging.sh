@@ -4,7 +4,7 @@
 #SBATCH -N 1
 
 # we use all cores
-#SBATCH -n 48
+#SBATCH -n 32
 
 # wall clock time (maximum 120 hours)
 #SBATCH -t 119:59:00
