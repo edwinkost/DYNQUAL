@@ -25,6 +25,9 @@
 #~ endYear="1984"
 
 
+# we activate the correct conda environment and many other settings
+. /home/edwin/load_all_default.sh
+
 # daily resolution
 python merge_netcdf_general.py ${inputDirRoot} ${outputDir} "outDailyTotNC" ${startYear}"-01-01" ${endYear}"-12-31" discharge,waterTemp NETCDF4 True 2 M01,M02,M03,M05,M06,M07,M08,M09 defined 300 -17 -35 52 38 &
 
